@@ -1,0 +1,53 @@
+.analytics-page { display: flex; flex-direction: column; gap: 20px; }
+
+.analytics-grid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 16px;
+}
+
+.an-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  animation: fadeUp 0.5s ease forwards;
+  opacity: 0;
+}
+.an-card.wide { grid-column: 1 / 2; }
+.an-card:not(.wide) { grid-column: 2 / 3; }
+
+.chart-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 16px; }
+.chart-header h3 { font-size: 0.95rem; font-weight: 700; color: var(--text); }
+.chart-header p { font-size: 0.75rem; color: var(--text3); margin-top: 2px; }
+
+.pie-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 12px;
+  max-height: 160px;
+  overflow-y: auto;
+}
+.legend-item { display: flex; align-items: center; gap: 8px; font-size: 0.75rem; color: var(--text2); }
+.legend-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.legend-pct { margin-left: auto; color: var(--text3); font-family: var(--mono); }
+
+.income-bar-track {
+  height: 6px;
+  background: var(--bg3);
+  border-radius: 3px;
+  overflow: hidden;
+  min-width: 80px;
+}
+.income-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--green2), var(--green3));
+  border-radius: 3px;
+  transition: width 0.8s ease;
+}
+
+@media (max-width: 1100px) {
+  .analytics-grid { grid-template-columns: 1fr; }
+  .an-card.wide, .an-card:not(.wide) { grid-column: 1; }
+}
