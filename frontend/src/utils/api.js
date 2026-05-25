@@ -1,4 +1,4 @@
-const BASE = 'https://fpo-managment-system.onrender.com'
+const BASE = 'https://fpo-managment-system.onrender.com/api'
 
 async function request(path, opts = {}) {
   const res = await fetch(`${BASE}${path}`, {
